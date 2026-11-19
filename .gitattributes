@@ -1,0 +1,2 @@
+# Preserve the imported bank's exact bytes and checksum on Windows checkouts.
+data/questions-dva.json -text

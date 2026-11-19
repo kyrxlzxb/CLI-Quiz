@@ -1,0 +1,32 @@
+{
+  "exam": "DVA-C02",
+  "records": 551,
+  "self_review_records": 10,
+  "source": "kyrxlzxb/aws-quiz-pwa-offline",
+  "source_commit": "0955345",
+  "sha256": "96d94bcb997a56d69295a38a362c08d9ae97638f2be3fb5fe866282f68e4a690",
+  "images": [
+    "assets/dva-supplement/image27.png",
+    "assets/dva-supplement/image28.png",
+    "assets/dva-supplement/image29.png",
+    "assets/dva-supplement/image38.png",
+    "assets/dva/q0029-question-1.jpg",
+    "assets/dva/q0045-question-1.jpg",
+    "assets/dva/q0049-question-1.jpg",
+    "assets/dva/q0075-option-a.png",
+    "assets/dva/q0075-option-b.png",
+    "assets/dva/q0075-option-c.png",
+    "assets/dva/q0075-option-d.png",
+    "assets/dva/q0139-option-a.png",
+    "assets/dva/q0139-option-b.png",
+    "assets/dva/q0139-option-c.png",
+    "assets/dva/q0139-option-d.png",
+    "assets/dva/q0163-question-1.png",
+    "assets/dva/q0174-question-1.png",
+    "assets/dva/q0226-question-1.png",
+    "assets/dva/q0236-option-a.png",
+    "assets/dva/q0236-option-b.png",
+    "assets/dva/q0236-option-c.png",
+    "assets/dva/q0236-option-d.png"
+  ]
+}
