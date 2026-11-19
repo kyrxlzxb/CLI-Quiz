@@ -1,5 +1,10 @@
 # CLI Quiz
 
+Chinese-stem DVA edition: open [`dva-zh/`](dva-zh/) and run `quiz.cmd`.
+This standalone folder includes all 551 Chinese stems, original English choices,
+Chinese explanations for incorrect answers, and local images. Its practice logs
+are separate from the English edition.
+
 Windows PowerShell terminal quiz. The original `quiz.cmd` and `questions.json`
 remain the default bank. `CLI-Quiz-CN.zip` is the existing Chinese package and
 has not been changed.

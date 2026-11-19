@@ -1,0 +1,31 @@
+{
+  "source": "kyrxlzxb/aws-quiz-pwa-offline",
+  "source_commit": "f39f654",
+  "records": 551,
+  "language": "Chinese stems, original English choices, Chinese explanations on incorrect answers",
+  "source_stems_sha256": "9afb6e0cabceb2fa69e94a6b4f6d99a756da3b49766f5255451ba2d7e3c856ef",
+  "images": [
+    "assets/dva-supplement/image27.png",
+    "assets/dva-supplement/image28.png",
+    "assets/dva-supplement/image29.png",
+    "assets/dva-supplement/image38.png",
+    "assets/dva/q0029-question-1.jpg",
+    "assets/dva/q0045-question-1.jpg",
+    "assets/dva/q0049-question-1.jpg",
+    "assets/dva/q0075-option-a.png",
+    "assets/dva/q0075-option-b.png",
+    "assets/dva/q0075-option-c.png",
+    "assets/dva/q0075-option-d.png",
+    "assets/dva/q0139-option-a.png",
+    "assets/dva/q0139-option-b.png",
+    "assets/dva/q0139-option-c.png",
+    "assets/dva/q0139-option-d.png",
+    "assets/dva/q0163-question-1.png",
+    "assets/dva/q0174-question-1.png",
+    "assets/dva/q0226-question-1.png",
+    "assets/dva/q0236-option-a.png",
+    "assets/dva/q0236-option-b.png",
+    "assets/dva/q0236-option-c.png",
+    "assets/dva/q0236-option-d.png"
+  ]
+}
