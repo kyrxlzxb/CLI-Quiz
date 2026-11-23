@@ -10,19 +10,28 @@ const read = file => fs.readFileSync(path.join(source, file), 'utf8').replace(/^
 const bank = JSON.parse(read('data/questions-dva.json'));
 const zh = JSON.parse(read('data/dva-stems-zh.json'));
 const fingerprint = JSON.parse(read('data/dva-stems-zh-source.json'));
+const explanationsText = read('data/dva-explanations.json');
+const explanations = JSON.parse(explanationsText);
+const explanationSource = JSON.parse(read('data/dva-explanations-source.json'));
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
 assert.equal(hash(JSON.stringify(bank.map(({qid,question_text}) => ({qid,question_text})))), fingerprint.sha256);
 assert.equal(bank.length, 551);
+assert.equal(hash(JSON.stringify(bank)), explanationSource.source_sha256, 'Explanations do not match the reviewed source bank');
+assert.deepEqual(Object.keys(explanations).sort(), bank.map(q => q.qid).sort());
 assert.deepEqual(Object.keys(zh).sort(), bank.map(q => q.qid).sort());
 const images = new Set();
 const output = bank.map(q => {
   assert(/[\u4e00-\u9fff]/.test(zh[q.qid]), q.qid);
-  assert(/[\u4e00-\u9fff]/.test(q.explanation_en), `Missing Chinese explanation: ${q.qid}`);
+  const explanation = explanations[q.qid];
+  assert(explanation.includes('知识点／记忆点：'), `Missing learning point: ${q.qid}`);
+  for (const option of q.options.filter(o => !o.is_correct)) {
+    assert(explanation.includes(`\n\n${option.key}：`), `Missing option explanation: ${q.qid}/${option.key}`);
+  }
   for (const media of [...(q.media || []), ...q.options.map(o => o.media).filter(Boolean)]) {
     assert(/^assets\/dva(?:-supplement)?\/[\w.-]+\.(png|jpg|jpeg)$/.test(media.src));
     images.add(media.src);
   }
-  return {...q, question_text_original: q.question_text, question_text: zh[q.qid]};
+  return {...q, question_text_original: q.question_text, question_text: zh[q.qid], explanation_en: explanation};
 });
 fs.mkdirSync(path.join(root, 'data'), {recursive:true});
 fs.writeFileSync(path.join(root, 'data/questions-dva.json'), JSON.stringify(output, null, 2)+'\n');
@@ -62,8 +71,10 @@ replace('Self-reviewed: $selfReviewed; needs review: $needsReview. Saved to revi
 // Windows PowerShell 5.1 needs a BOM to parse Chinese string literals correctly.
 fs.writeFileSync(path.join(root, 'quiz.ps1'), '\uFEFF'+script);
 fs.writeFileSync(path.join(root, 'data/import.json'), JSON.stringify({
-  source:'kyrxlzxb/aws-quiz-pwa-offline', source_commit:'f39f654', records:output.length,
+  source:'kyrxlzxb/aws-quiz-pwa-offline', source_commit:'0f60218', records:output.length,
   language:'Chinese stems, original English choices, Chinese explanations on incorrect answers',
   source_stems_sha256:fingerprint.sha256, images:[...images].sort(),
+  source_explanations_sha256:hash(explanationsText),
+  explanations_sha256:hash(JSON.stringify(output.map(({qid,explanation_en}) => ({qid,explanation_en})))),
 }, null, 2)+'\n');
 console.log(`Built standalone Chinese CLI: ${output.length} records, ${images.size} images.`);

@@ -1,6 +1,6 @@
 {
   "source": "kyrxlzxb/aws-quiz-pwa-offline",
-  "source_commit": "f39f654",
+  "source_commit": "0f60218",
   "records": 551,
   "language": "Chinese stems, original English choices, Chinese explanations on incorrect answers",
   "source_stems_sha256": "9afb6e0cabceb2fa69e94a6b4f6d99a756da3b49766f5255451ba2d7e3c856ef",
@@ -27,5 +27,7 @@
     "assets/dva/q0236-option-b.png",
     "assets/dva/q0236-option-c.png",
     "assets/dva/q0236-option-d.png"
-  ]
+  ],
+  "source_explanations_sha256": "13bea1639132e7abb22478e4ae147de9f31a4c2c51c837347e958f20ee1478b2",
+  "explanations_sha256": "6aeac7d3dc56dc314375b79408c6e45befe1890192428de7955089dd40832214"
 }

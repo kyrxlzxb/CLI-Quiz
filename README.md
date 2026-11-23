@@ -4,6 +4,8 @@ Chinese-stem DVA edition: open [`dva-zh/`](dva-zh/) and run `quiz.cmd`.
 This standalone folder includes all 551 Chinese stems, original English choices,
 Chinese explanations for incorrect answers, and local images. Its practice logs
 are separate from the English edition.
+The Chinese edition now includes all 551 rewritten learning points and 1,663
+individual option explanations from PWA commit `0f60218`, shown after mistakes.
 
 Windows PowerShell terminal quiz. The original `quiz.cmd` and `questions.json`
 remain the default bank. `CLI-Quiz-CN.zip` is the existing Chinese package and
